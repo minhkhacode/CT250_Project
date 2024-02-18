@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,300;1,500&display=swap');
+
 :root {
     --black: #000;
     --white: #fff;
+    --gray: #ededed;
+
+    --color-text-header: #2c2c2c;
 }
 
 * {
@@ -11,6 +16,7 @@
 
 html,
 body {
+    font-family: 'Roboto', sans-serif;
     color: var(--black);
     background-color: var(--white);
     max-width: 100vw;

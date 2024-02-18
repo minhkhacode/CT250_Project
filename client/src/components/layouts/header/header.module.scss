@@ -1,0 +1,26 @@
+.wrapper {
+    border: 1px solid aqua;
+    background-position: 50% 0;
+    background-size: cover;
+    position: relative;
+    transition: background-color 0.3s, opacity 0.3s;
+    width: 100%;
+    z-index: 1001;
+
+    height: 176px;
+    max-width: 100%;
+}
+
+.top-bar {
+    height: 30px;
+    background-color: var(--gray);
+    color: var(--color-text-header);
+    text-align: center;
+
+    .header-label {
+        padding: 8px;
+        font-size: 12px;
+        height: auto;
+        font-weight: 600;
+    }
+}
