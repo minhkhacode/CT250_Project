@@ -1,6 +1,17 @@
 :root {
     --black: #000;
     --white: #fff;
+
+    --facebook-color: #4267B2;
+    --instagram-color: #E1306C;
+    --twitter-color: #1DA1F2;
+    --linkedin-color: #0077b5;
+    --github-color: #2b3137;
+
+    --mdb-border-width: 1px;
+    --mdb-border-style: solid;
+    --mdb-border-color: #e0e0e0;
+    --mdb--bg-opacity: 1;
 }
 
 * {
@@ -11,10 +22,15 @@
 
 html,
 body {
+    font: 16px Roboto;
     color: var(--black);
     background-color: var(--white);
     max-width: 100vw;
     overflow-x: hidden;
+}
+
+section{
+    display: block;
 }
 
 button {
