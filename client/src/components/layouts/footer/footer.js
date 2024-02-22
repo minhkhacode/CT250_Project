@@ -39,9 +39,8 @@ const dataFooter = [
     },
 ];
 
-const year = new Date();
-
 function Footer() {
+    const year = new Date();
     return (
         <footer>
             <div className={cx('wrapper')}>
