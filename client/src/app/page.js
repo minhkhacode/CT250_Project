@@ -1,10 +1,9 @@
-import Image from 'next/image';
-import styles from './page.scss';
-
-export default function Home() {
+function Home() {
     return (
-        <>
+        <div className="wrapper">
             <h1>hello word!</h1>
-        </>
+        </div>
     );
 }
+
+export default Home;

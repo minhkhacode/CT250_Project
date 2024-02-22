@@ -2,9 +2,9 @@
     --black: #000;
     --white: #fff;
 
-    --facebook-color: #4267B2;
-    --instagram-color: #E1306C;
-    --twitter-color: #1DA1F2;
+    --facebook-color: #4267b2;
+    --instagram-color: #e1306c;
+    --twitter-color: #1da1f2;
     --linkedin-color: #0077b5;
     --github-color: #2b3137;
 
@@ -12,9 +12,15 @@
     --mdb-border-style: solid;
     --mdb-border-color: #e0e0e0;
     --mdb--bg-opacity: 1;
+
+    --backGroup-color-top-bar: #ededed;
+
+    --color-text-navbar: #838383;
+    --color-icon-header: #636b74;
 }
 
 * {
+    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -22,14 +28,14 @@
 
 html,
 body {
-    font: 16px Roboto;
+    scroll-behavior: smooth;
     color: var(--black);
     background-color: var(--white);
     max-width: 100vw;
     overflow-x: hidden;
 }
 
-section{
+section {
     display: block;
 }
 
@@ -49,4 +55,8 @@ a {
     html {
         color-scheme: dark;
     }
+}
+
+.scrollbar_custom {
+    height: auto;
 }
