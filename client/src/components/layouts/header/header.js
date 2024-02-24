@@ -109,11 +109,9 @@ function Header() {
                         >
                             {dataHeader.map((item, index) => {
                                 return (
-                                    <div className={cx('nav-top-link')}>
+                                    <div className={cx('nav-top-link')} key={index}>
                                         <div className="menu-item menu-item-type-custom menu-item-object-custom menu-item-366 menu-item-design-full-width menu-item-has-block has-dropdown">
-                                            <Link key={index} href={item.url}>
-                                                {item.title}
-                                            </Link>
+                                            <Link href={item.url}>{item.title}</Link>
                                         </div>
                                     </div>
                                 );
