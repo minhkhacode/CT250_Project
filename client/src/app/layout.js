@@ -1,5 +1,7 @@
 'use client';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'tippy.js/dist/tippy.css';
+import Scrollbars from 'react-custom-scrollbars-2';
 
 import Header from '@/components/layouts/header';
 import Footer from '@/components/layouts/footer';
@@ -11,11 +13,9 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={'wrapper'}>
-                {/* <SpringScrollbars autoHeight autoHeightMin={100} autoHeightMax={200}> */}
                 <Header />
                 {children}
                 <Footer />
-                {/* </SpringScrollbars> */}
             </body>
         </html>
     );

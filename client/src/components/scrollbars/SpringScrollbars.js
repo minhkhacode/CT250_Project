@@ -1,55 +1,51 @@
 import React, { Component } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars-2';
-import { SpringSystem, MathUtil } from 'rebound';
 
-export default class SpringScrollbars extends Component {
+export default class ColoredScrollbars extends Component {
     constructor(props, ...rest) {
         super(props, ...rest);
-        this.handleSpringUpdate = this.handleSpringUpdate.bind(this);
+        this.state = { top: 0 };
+        this.handleUpdate = this.handleUpdate.bind(this);
+        this.renderView = this.renderView.bind(this);
+        this.renderThumb = this.renderThumb.bind(this);
     }
 
-    componentDidMount() {
-        this.springSystem = new SpringSystem();
-        this.spring = this.springSystem.createSpring();
-        this.spring.addListener({ onSpringUpdate: this.handleSpringUpdate });
+    handleUpdate(values) {
+        const { top } = values;
+        this.setState({ top });
     }
 
-    componentWillUnmount() {
-        this.springSystem.deregisterSpring(this.spring);
-        this.springSystem.removeAllListeners();
-        this.springSystem = undefined;
-        this.spring.destroy();
-        this.spring = undefined;
+    renderView({ style, ...props }) {
+        const { top } = this.state;
+        const viewStyle = {
+            padding: 15,
+            backgroundColor: `rgb(${Math.round(255 - top * 255)}, ${Math.round(top * 255)}, ${Math.round(255)})`,
+            color: `rgb(${Math.round(255 - top * 255)}, ${Math.round(255 - top * 255)}, ${Math.round(
+                255 - top * 255,
+            )})`,
+        };
+        return <div className="box" style={{ ...style, ...viewStyle }} {...props} />;
     }
 
-    getScrollTop() {
-        return this.refs.scrollbars.getScrollTop();
-    }
-
-    getScrollHeight() {
-        return this.refs.scrollbars.getScrollHeight();
-    }
-
-    getHeight() {
-        return this.refs.scrollbars.getHeight();
-    }
-
-    scrollTop(top) {
-        const { scrollbars } = this.refs;
-        const scrollTop = scrollbars.getScrollTop();
-        const scrollHeight = scrollbars.getScrollHeight();
-        const val = MathUtil.mapValueInRange(top, 0, scrollHeight, scrollHeight * 0.2, scrollHeight * 0.8);
-        this.spring.setCurrentValue(scrollTop).setAtRest();
-        this.spring.setEndValue(val);
-    }
-
-    handleSpringUpdate(spring) {
-        const { scrollbars } = this.refs;
-        const val = spring.getCurrentValue();
-        scrollbars.scrollTop(val);
+    renderThumb({ style, ...props }) {
+        const { top } = this.state;
+        const thumbStyle = {
+            backgroundColor: `rgb(${Math.round(255 - top * 255)}, ${Math.round(255 - top * 255)}, ${Math.round(
+                255 - top * 255,
+            )})`,
+        };
+        return <div style={{ ...style, ...thumbStyle }} {...props} />;
     }
 
     render() {
-        return <Scrollbars {...this.props} ref="scrollbars" />;
+        return (
+            <Scrollbars
+                renderView={this.renderView}
+                renderThumbHorizontal={this.renderThumb}
+                renderThumbVertical={this.renderThumb}
+                onUpdate={this.handleUpdate}
+                {...this.props}
+            />
+        );
     }
 }

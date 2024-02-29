@@ -100,12 +100,12 @@ function Footer() {
                                     <h6 className={cx('text-uppercase fw-bold mb-4')}>{item.tittle}</h6>
                                     {item.item.map((secondItem, index) => {
                                         return (
-                                            <>
-                                                <Link key={index} href={secondItem.url}>
+                                            <div key={index}>
+                                                <Link href={secondItem.url}>
                                                     {secondItem.icon}
                                                     <p>{secondItem.tittleItem}</p>
                                                 </Link>
-                                            </>
+                                            </div>
                                         );
                                     })}
                                 </div>

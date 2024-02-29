@@ -16,6 +16,9 @@
     --mdb--bg-opacity: 1;
 
     --backGroup-color-top-bar: #ededed;
+
+    --color-text-navbar: #838383;
+    --color-icon-header: #636b74;
 }
 
 * {
@@ -54,4 +57,8 @@ a {
     html {
         color-scheme: dark;
     }
+}
+
+.scrollbar_custom {
+    height: auto;
 }
