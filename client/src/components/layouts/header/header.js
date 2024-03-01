@@ -58,24 +58,6 @@ function Header() {
                         </Link>
                     </div>
                     <div className={cx('flex-col', 'show-for-medium', 'flex-left')}>
-<<<<<<< HEAD
-                        <ul className={cx('header-nav', 'header-nav-main', 'nav', 'nav-left', 'nav-uppercase')}></ul>
-                    </div>
-                    <div className={cx('flex-col', 'hide-for-medium', 'flex-right')}>
-                        <div className={cx('header-nav', 'header-nav-main', 'nav', 'nav-right', 'nav-uppercase')}></div>
-                        <div className={cx('flex-row', 'cart-item', 'has-icon')}>
-                            <form className={cx('search-form')}>
-                                <button
-                                    className={cx('search-btn')}
-                                    onClick={(event) => {
-                                        event.preventDefault();
-                                        alert('hello');
-                                    }}
-                                >
-                                    <FontAwesomeIcon className={cx('search-icon')} icon={faMagnifyingGlass} />
-                                </button>
-                                <input className={cx('search-input')} placeholder="Search product or brand" />
-=======
                         <ul className={cx('header-nav', 'header-nav-main', 'nav nav-left', 'nav-uppercase')}></ul>
                     </div>
                     <div className={cx('header-search', 'flex-col', 'hide-for-medium', 'flex-right')}>
@@ -100,7 +82,6 @@ function Header() {
                                         setValueSearch(e.target.value);
                                     }}
                                 />
->>>>>>> origin/tranthaiduy
                             </form>
                             <Tippy content={'Giỏ hàng'} placement="bottom" delay={[300, 0]}>
                                 <div className={cx('icon-bag')} onClick={() => router.push('/payment')}>

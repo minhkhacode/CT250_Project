@@ -54,41 +54,6 @@
 }
 
 .cart-item {
-<<<<<<< HEAD
-    height: 40px;
-    border-radius: 40px;
-    padding: 10px;
-    width: 320px;
-    padding: 0 6px;
-    gap: 8px;
-}
-
-.search-form {
-    flex: 1;
-    position: relative;
-}
-
-.search-input {
-    box-shadow: none;
-    color: var(--black);
-    background: var(--backGroup-color-top-bar);
-    height: 40px;
-    border-radius: 40px;
-    width: 100%;
-    padding: 6px 40px 6px 20px;
-}
-
-.search-btn {
-    position: absolute;
-    right: 0;
-    color: #797575;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-=======
     width: 400px;
     .search-input {
         height: 31px;
@@ -131,7 +96,6 @@
 }
 
 .header-bottom {
->>>>>>> origin/tranthaiduy
     align-items: center;
     display: flex;
     flex-wrap: no-wrap;
