@@ -84,7 +84,7 @@ function Header() {
                                 />
                             </form>
                             <Tippy content={'Giỏ hàng'} placement="bottom" delay={[300, 0]}>
-                                <div className={cx('icon-bag')} onClick={() => router.push('/payment')}>
+                                <div className={cx('icon-bag')} onClick={() => router.push('/cart')}>
                                     <FontAwesomeIcon icon={faBagShopping} />
                                 </div>
                             </Tippy>

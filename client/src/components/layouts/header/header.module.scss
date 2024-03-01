@@ -126,6 +126,8 @@
     padding: 0px;
 
     a {
+        color: var(--color-text-navbar);
+        text-decoration: none;
         font-size: 0.9em;
     }
 
@@ -138,4 +140,8 @@
     &:hover {
         border-bottom: 4px solid #9f1d25;
     }
+}
+
+.icon-bag {
+    display: inline-block;
 }
