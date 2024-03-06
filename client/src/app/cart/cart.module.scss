@@ -1,0 +1,27 @@
+/* CartPage.module.scss */
+
+.wrapper {
+    margin: 10px 10px;
+}
+
+.cartTitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cartList {
+    list-style: none;
+    padding: 0;
+}
+
+.cartItem {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.totalPrice {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 20px;
+}

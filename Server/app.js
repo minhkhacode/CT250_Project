@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const {usersRouter} = require('./app/routes');
+const { usersRouter } = require('./app/routes');
 
 const app = express();
 
@@ -15,12 +15,10 @@ app.use((error, req, res, next) => {
 
 debugger;
 
-app.use('/users',usersRouter);
+app.use('/users', usersRouter);
 
 app.get('/', (req, res) => {
     res.send('Xin chào bạn đến với cửa hàng');
 });
-
-
 
 module.exports = app;

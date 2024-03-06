@@ -86,6 +86,7 @@ function Header() {
                             <Tippy content={'Giỏ hàng'} placement="bottom" delay={[300, 0]}>
                                 <div className={cx('icon-bag')} onClick={() => router.push('/cart')}>
                                     <FontAwesomeIcon icon={faBagShopping} />
+                                    <span className={cx('badge', 'badge-warning', 'lblCartCount')}>4</span>
                                 </div>
                             </Tippy>
                         </div>
@@ -111,7 +112,18 @@ function Header() {
                                 return (
                                     <div className={cx('nav-top-link')} key={index}>
                                         <div className="menu-item menu-item-type-custom menu-item-object-custom menu-item-366 menu-item-design-full-width menu-item-has-block has-dropdown">
-                                            <Link href={item.url}>{item.title}</Link>
+                                            <div className={cx('dropdown')}>
+                                                <Link href={item.url}>{item.title}</Link>
+                                                <div className={cx('dropdown-content')}>
+                                                    {item.item.map((secondItem, index) => {
+                                                        return (
+                                                            <div key={index}>
+                                                                <a className={cx('')}>{secondItem.title}</a>
+                                                            </div>
+                                                        );
+                                                    })}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 );

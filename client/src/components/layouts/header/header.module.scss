@@ -95,6 +95,28 @@
     }
 }
 
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+    background-color: #c67605;
+}
+
+.lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px;
+}
+
 .header-bottom {
     align-items: center;
     display: flex;
@@ -144,4 +166,62 @@
 
 .icon-bag {
     display: inline-block;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    align-items: center;
+}
+
+// Dropdown Content (Hidden by Default)
+.dropdown-content {
+    margin-top: 26px;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: 0.5s ease-in-out;
+}
+
+// Links inside the dropdown
+.dropdown-content a {
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+// Change color of dropdown links on hover
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+// Show the dropdown menu on hover
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+// Change the background color of the dropdown button when the dropdown content is shown
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.dropdown-menu li {
+    position: relative;
+}
+.dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+}
+.dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+}
+.dropdown-menu > li:hover > .dropdown-submenu {
+    display: block;
 }

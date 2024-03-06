@@ -18,9 +18,6 @@
     padding: 0;
 }
 
-.filter__item-right {
-}
-
 .fillter__image {
     display: block;
     width: 100%;
@@ -95,6 +92,11 @@
     object-fit: cover;
     object-position: center;
     border-radius: 8px;
+
+    &:hover {
+        transition: transform 0.2s;
+        border-radius: 5px;
+    }
 }
 
 .collection__item-title {
