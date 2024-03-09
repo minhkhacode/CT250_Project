@@ -13,8 +13,6 @@ app.use((error, req, res, next) => {
     });
 });
 
-debugger;
-
 app.use('/users', usersRouter);
 
 app.get('/', (req, res) => {

@@ -1,6 +1,6 @@
 export const dataHeader = [
     {
-        title: 'THƯƠNG HIỆU',
+        title: 'Thương Hiệu',
         url: '/',
         item: [
             {
@@ -18,7 +18,7 @@ export const dataHeader = [
         ],
     },
     {
-        title: 'THƯƠNG HIỆU',
+        title: 'Nam',
         url: '/',
         item: [
             {
@@ -28,7 +28,7 @@ export const dataHeader = [
         ],
     },
     {
-        title: 'THƯƠNG HIỆU',
+        title: 'Nữ',
         url: '/',
         item: [
             {
@@ -38,7 +38,7 @@ export const dataHeader = [
         ],
     },
     {
-        title: 'THƯƠNG HIỆU',
+        title: 'Cặp Đôi',
         url: '/',
         item: [
             {
@@ -48,7 +48,7 @@ export const dataHeader = [
         ],
     },
     {
-        title: 'THƯƠNG HIỆU',
+        title: 'Liên Hệ',
         url: '/',
         item: [
             {
@@ -58,7 +58,7 @@ export const dataHeader = [
         ],
     },
     {
-        title: 'THƯƠNG HIỆU',
+        title: 'Tin Tức',
         url: '/',
         item: [
             {

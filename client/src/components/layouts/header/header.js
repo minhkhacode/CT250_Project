@@ -10,6 +10,9 @@ import 'tippy.js/animations/scale.css';
 import { useEffect, useState } from 'react';
 
 import { dataHeader } from './dataHeader';
+import Menu from '../menu/menu.js'
+
+import dataMenu from './dataMenu.js';
 
 import styles from './header.module.scss';
 
@@ -19,6 +22,11 @@ function Header() {
     const router = useRouter();
 
     const [valueSearch, setValueSearch] = useState('');
+    const [show, setShow] = useState('');
+
+    useEffect(() => {
+        console.log(show);
+    },[show])
 
     useEffect(() => {
         console.log(valueSearch);
@@ -110,19 +118,27 @@ function Header() {
                         >
                             {dataHeader.map((item, index) => {
                                 return (
-                                    <div className={cx('nav-top-link')} key={index}>
+                                    <div 
+                                        className={cx('nav-top-link')} 
+                                        key={index} 
+                                        onMouseEnter={() => setShow(item.title)}
+                                        onMouseLeave={() => setShow('')}
+                                    >
                                         <div className="menu-item menu-item-type-custom menu-item-object-custom menu-item-366 menu-item-design-full-width menu-item-has-block has-dropdown">
                                             <div className={cx('dropdown')}>
                                                 <Link href={item.url}>{item.title}</Link>
-                                                <div className={cx('dropdown-content')}>
+                                                <div className={cx('isShow')}>
+                                                    {item.title===show && <Menu data={dataMenu[index].data}/>}
+                                                </div>
+                                                {/* <div className={cx('dropdown-content')}>
                                                     {item.item.map((secondItem, index) => {
                                                         return (
                                                             <div key={index}>
-                                                                <a className={cx('')}>{secondItem.title}</a>
+                                                            <a className={cx('')}>{secondItem.title}</a>
                                                             </div>
-                                                        );
-                                                    })}
-                                                </div>
+                                                            );
+                                                        })}
+                                                    </div> */}
                                             </div>
                                         </div>
                                     </div>
