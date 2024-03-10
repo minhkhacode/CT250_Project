@@ -1,3 +1,5 @@
+const User = require('../')
+
 async function getAllUsersInfor(req, res) {
     res.send('get all users infor');
 }
@@ -19,10 +21,19 @@ async function deleteUser(req, res) {
 }
 
 async function createNewUser(req, res) {
-    res.send('create new user');
+    try {
+        const newUser = {
+            ...req.body
+        }
+
+    } catch (error) {
+        res.status(400).send({
+            message: "can not create new user"
+        })
+    }
 }
 
-export default {
+module.exports = {
     getAllUsersInfor,
     deleteAllUsers,
     getUserById,
