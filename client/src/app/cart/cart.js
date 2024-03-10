@@ -1,41 +1,98 @@
 'use client';
 import classNames from 'classnames/bind';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { useRouter } from 'next/navigation';
+import Cart from '@/components/carts/cart';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDongSign } from '@fortawesome/free-solid-svg-icons';
+
+import { removeCartService } from '@/services/cartsService';
 
 import styles from './cart.module.scss';
 
 const cx = classNames.bind(styles);
 
 function CartPage() {
+    const router = useRouter();
+
     // Dummy data for the cart
-    const cartItems = [
-        { id: 1, name: 'Product 1', price: 10 },
-        { id: 2, name: 'Product 2', price: 20 },
-        { id: 3, name: 'Product 3', price: 30 },
+
+    const dataCarts = [
+        {
+            title: 'Dingo Dog Bones',
+            src: 'https://s.cdpn.io/3/dingo-dog-bones.jpg',
+            description: `The best dog bones of all time. Holy crap. Your dog will be begging for these things! I got curious once and ate one myself. I'm a fan.`,
+            price: 21000000,
+        },
+        {
+            title: 'Dingo Dog Bones',
+            src: 'https://s.cdpn.io/3/dingo-dog-bones.jpg',
+            description: `The best dog bones of all time. Holy crap. Your dog will be begging for these things! I got curious once and ate one myself. I'm a fan.`,
+            price: 21000000,
+        },
+        {
+            title: 'Dingo Dog Bones',
+            src: 'https://s.cdpn.io/3/dingo-dog-bones.jpg',
+            description: `The best dog bones of all time. Holy crap. Your dog will be begging for these things! I got curious once and ate one myself. I'm a fan.`,
+            price: 21000000,
+        },
+        {
+            title: 'Dingo Dog Bones',
+            src: 'https://s.cdpn.io/3/dingo-dog-bones.jpg',
+            description: `The best dog bones of all time. Holy crap. Your dog will be begging for these things! I got curious once and ate one myself. I'm a fan.`,
+            price: 21000000,
+        },
     ];
 
     // Calculate total price
-    const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
+    // const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
+
+    const handleRemoveCart = () => {
+        removeCartService();
+    };
 
     return (
         <div className={cx('wrapper')}>
-            <Container>
-                <h1 className={cx('cartTitle')}>Your Cart</h1>
-                <Row>
-                    <Col>
-                        <ul className={cx('cartList')}>
-                            {cartItems.map((item) => (
-                                <li key={item.id} className={styles.cartItem}>
-                                    <span>{item.name}</span>
-                                    <span>${item.price}</span>
-                                </li>
-                            ))}
-                        </ul>
-                        <div className={cx('totalPrice')}>Total: ${totalPrice}</div>
-                        <Button variant="primary">Checkout</Button>
-                    </Col>
-                </Row>
-            </Container>
+            {dataCarts ? (
+                <>
+                    <div className={cx('products')}>
+                        {dataCarts.map((item, index) => {
+                            return (
+                                <div className={cx('item_cart')} key={index}>
+                                    <Cart
+                                        title={item.title}
+                                        src={item.src}
+                                        description={item.description}
+                                        price={item.price}
+                                        onClick={() => {
+                                            handleRemoveCart();
+                                        }}
+                                    />
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    <div className={cx('cart-subtotal')}>
+                        <div className={cx('temporary-subtotal')}>
+                            Total
+                            <span className={cx('price')}>
+                                20000000 <FontAwesomeIcon icon={faDongSign} />
+                            </span>
+                        </div>
+                    </div>
+
+                    <button
+                        className={cx('checkout')}
+                        onClick={() => {
+                            router.push('/payment');
+                        }}
+                    >
+                        Checkout
+                    </button>
+                </>
+            ) : (
+                <></>
+            )}
         </div>
     );
 }
