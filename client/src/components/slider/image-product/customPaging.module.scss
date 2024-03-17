@@ -1,0 +1,11 @@
+.image-item-slider {
+    img {
+        border-radius: 10px;
+    }
+}
+
+.slick-prev {
+    ::before {
+        color: var(--black);
+    }
+}

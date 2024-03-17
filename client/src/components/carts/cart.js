@@ -65,7 +65,7 @@ function Cart(props) {
                     </div>
                     <div className={cx('product-subtotal')}>
                         <span className={cx('cart-item-total')}>
-                            {props.price} <FontAwesomeIcon icon={faDongSign} />
+                            {props.price} <FontAwesomeIcon className={cx('iconPrice')} icon={faDongSign} />{' '}
                         </span>
                     </div>
                     <Tippy content={'Delete'} delay={[500, 500]}>

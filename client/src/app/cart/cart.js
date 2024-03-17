@@ -1,10 +1,8 @@
 'use client';
 import classNames from 'classnames/bind';
 import { useRouter } from 'next/navigation';
-import Cart from '@/components/carts/cart';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDongSign } from '@fortawesome/free-solid-svg-icons';
 
+import Cart from '@/components/carts/cart';
 import { removeCartService } from '@/services/cartsService';
 
 import styles from './cart.module.scss';
@@ -52,7 +50,7 @@ function CartPage() {
 
     return (
         <div className={cx('wrapper')}>
-            {dataCarts ? (
+            {dataCarts.length > 0 ? (
                 <>
                     <div className={cx('products')}>
                         {dataCarts.map((item, index) => {
@@ -72,13 +70,53 @@ function CartPage() {
                         })}
                     </div>
 
-                    <div className={cx('cart-subtotal')}>
-                        <div className={cx('temporary-subtotal')}>
-                            Total
-                            <span className={cx('price')}>
-                                20000000 <FontAwesomeIcon icon={faDongSign} />
-                            </span>
+                    <div className="woocommerce-form-coupon-toggle">
+                        <div className="woocommerce-info message-wrapper">
+                            <div className="message-container container medium-text-center">
+                                <a href="#" className="showcoupon active">
+                                    <img
+                                        className="lazy-load-active"
+                                        width="20"
+                                        height="20"
+                                        src="https://donghohaitrieu.com/wp-content/themes/flatsome-child/assets/images/discount.svg"
+                                        data-src="https://donghohaitrieu.com/wp-content/themes/flatsome-child/assets/images/discount.svg"
+                                    />
+                                    Phiếu ưu đãi<i className="icon-angle-right"></i>
+                                </a>
+                            </div>
                         </div>
+                    </div>
+
+                    <div className={cx('subtotal-price')}>
+                        <table>
+                            <tbody>
+                                <tr className={cx('cart-subtotal')}>
+                                    <th>Tạm tính</th>
+                                    <td>
+                                        <span className={cx('woocommerce-Price-amount amount')}>
+                                            <bdi>
+                                                17.500.000&nbsp;
+                                                <span className={cx('woocommerce-Price-currencySymbol')}>₫</span>
+                                            </bdi>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr className="order-total">
+                                    <th>Tổng</th>
+                                    <td>
+                                        <strong>
+                                            <span className="woocommerce-Price-amount amount">
+                                                <bdi>
+                                                    17.500.000&nbsp;
+                                                    <span className="woocommerce-Price-currencySymbol">₫</span>
+                                                </bdi>
+                                            </span>
+                                        </strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <button
@@ -91,7 +129,16 @@ function CartPage() {
                     </button>
                 </>
             ) : (
-                <></>
+                <>
+                    <button
+                        className={cx('btn-toHomepage')}
+                        onClick={() => {
+                            router.push('/');
+                        }}
+                    >
+                        quay trở lại cửa hàng
+                    </button>
+                </>
             )}
         </div>
     );

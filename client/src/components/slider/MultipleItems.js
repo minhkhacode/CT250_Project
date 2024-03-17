@@ -58,7 +58,7 @@ function MultipleItems() {
     // };
 
     return (
-        <div className="slider-container">
+        <div className={cx('slider-container')}>
             <Slider {...settings}>
                 {category.map((item, index) => {
                     return (

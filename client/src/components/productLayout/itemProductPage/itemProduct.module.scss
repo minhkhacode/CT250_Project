@@ -1,0 +1,50 @@
+.wrapper {
+    height: 85px;
+    width: 255px;
+    padding-left: 15px;
+}
+
+.icon-box {
+    border-style: solid;
+    border-color: #ededed;
+    border-width: 1px;
+    padding: 10px 10px 10px 10px;
+    align-items: center;
+    align-content: center;
+    border-radius: 10px;
+
+    .icon-box-img {
+        width: 30px !important;
+    }
+}
+
+.icon-inner {
+    color: rgb(159, 29, 37);
+    display: flex;
+
+    svg {
+        fill: currentColor;
+        height: 100%;
+        transition: all 0.3s;
+        width: 100%;
+    }
+}
+
+.icon-box-text {
+    max-width: 100%;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 13px;
+    .uppercase {
+        font-weight: 500;
+        text-transform: none;
+
+        h5 {
+            margin-top: 0;
+            text-rendering: optimizeSpeed;
+            width: 100%;
+        }
+    }
+}
