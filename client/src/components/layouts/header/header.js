@@ -10,8 +10,7 @@ import 'tippy.js/animations/scale.css';
 import { useEffect, useState } from 'react';
 
 import { dataHeader } from './dataHeader';
-import Menu from '../menu/menu.js'
-
+import Menu from '../menu/menu.js';
 import dataMenu from './dataMenu.js';
 
 import styles from './header.module.scss';
@@ -26,7 +25,7 @@ function Header() {
 
     useEffect(() => {
         console.log(show);
-    },[show])
+    }, [show]);
 
     useEffect(() => {
         console.log(valueSearch);
@@ -118,9 +117,9 @@ function Header() {
                         >
                             {dataHeader.map((item, index) => {
                                 return (
-                                    <div 
-                                        className={cx('nav-top-link')} 
-                                        key={index} 
+                                    <div
+                                        className={cx('nav-top-link')}
+                                        key={index}
                                         onMouseEnter={() => setShow(item.title)}
                                         onMouseLeave={() => setShow('')}
                                     >
@@ -129,6 +128,7 @@ function Header() {
                                                 <Link href={item.url}>{item.title}</Link>
                                                 <div className={cx('isShow')}>
                                                     {<Menu data={dataMenu[index].data}/>}
+                                                    {item.title === show && <Menu data={dataMenu[index].data} />}
                                                 </div>
                                                 {/* <div className={cx('dropdown-content')}>
                                                     {item.item.map((secondItem, index) => {

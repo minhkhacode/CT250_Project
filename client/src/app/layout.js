@@ -6,7 +6,6 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import Header from '@/components/layouts/header';
 import Footer from '@/components/layouts/footer';
-
 import './page.scss';
 import './globals.scss';
 
