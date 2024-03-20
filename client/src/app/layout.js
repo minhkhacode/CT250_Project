@@ -7,7 +7,6 @@ import { Toaster } from 'react-hot-toast';
 
 import Header from '@/components/layouts/header';
 import Footer from '@/components/layouts/footer';
-
 import './page.scss';
 import './globals.scss';
 

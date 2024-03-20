@@ -127,6 +127,7 @@ function Header() {
                                             <div className={cx('dropdown')}>
                                                 <Link href={item.url}>{item.title}</Link>
                                                 <div className={cx('isShow')}>
+                                                    {<Menu data={dataMenu[index].data}/>}
                                                     {item.title === show && <Menu data={dataMenu[index].data} />}
                                                 </div>
                                                 {/* <div className={cx('dropdown-content')}>
