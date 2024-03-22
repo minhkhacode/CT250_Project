@@ -126,7 +126,7 @@
 }
 
 .row {
-    max-width: 1080px;
+    max-width: 1050px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -159,4 +159,170 @@
         height: 30px;
         width: 30px;
     }
+}
+
+.text-comment {
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    h2 {
+        font-weight: 600;
+        font-size: 1.6em;
+        line-height: 1.3;
+        color: #9f1d25;
+    }
+}
+
+.review-form-wrapper {
+    margin-bottom: 20px;
+
+    .review-form {
+        min-height: 1050;
+    }
+
+    .comment-form-comment {
+        margin-bottom: 16px;
+        background: #f0efef;
+        padding: 4px 24px 10px;
+        border-radius: 12px;
+        flex-basis: 100%;
+        max-width: calc(100% - 30px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .comment {
+        height: 38px;
+        padding-top: 0.7em;
+        width: 100%;
+        margin: 0;
+        min-height: 38px;
+        background: 0 0;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        border-bottom: thin solid #ccc;
+        text-align: center;
+        max-width: 100%;
+        color: var(--black);
+    }
+
+    .comment-form {
+        form {
+            width: 972px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 100%;
+            margin: 0;
+        }
+    }
+
+    .action-comment-wrapper {
+        display: grid;
+        flex-direction: column;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.2rem;
+    }
+
+    .comment-form-name,
+    .comment-form-email,
+    .comment-form-phone,
+    .comment-form-author {
+        margin-left: 16px;
+        width: 502px;
+        align-items: center;
+        input {
+            width: 100%;
+            min-height: 46px;
+            text-align: center;
+            font-weight: 400;
+            background: #f0efef;
+            border-radius: 8px;
+            color: #555;
+            border-color: #f0efef;
+            background-color: #f0efef;
+            border: 1px solid;
+            text-transform: none;
+            margin: 0;
+            box-shadow: none;
+        }
+    }
+
+    .comment-form-email,
+    .comment-form-author {
+        margin-left: 0;
+    }
+
+    .comment-form-author {
+        .btn--normal {
+            button {
+                width: 100%;
+                border: thin solid #9f1e25;
+                background: #9f1e25;
+                border-radius: 8px;
+                color: #fff;
+                text-transform: none;
+                font-weight: 600;
+                margin: 0;
+                width: 100%;
+                transition: all 0.2s ease-in-out;
+                min-height: 46px;
+                font-size: 14px;
+            }
+
+            :hover {
+                background: rgb(116, 33, 33);
+                color: #fff;
+            }
+        }
+    }
+}
+
+.comment-count {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #933;
+    position: relative;
+
+    ::before {
+        content: '';
+        width: 100%;
+        height: 0;
+        border-top: thin solid #ccc;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    span {
+        background: #fff;
+        padding-left: 8px;
+        padding-right: 8px;
+        font-weight: 700;
+    }
+}
+
+.comment-list {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.relate-product {
+    border-top: 1px solid #ececec;
+}
+
+.product-section-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.2;
+    padding: 15px 0;
+    margin-bottom: 10px;
+    color: #676767;
+    font-size: 1.25em;
 }

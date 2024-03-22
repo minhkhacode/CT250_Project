@@ -33,7 +33,7 @@ const dataFooter = [
         item: [
             { tittleItem: 'New York, NY 10012, US', url: '/', icon: <FontAwesomeIcon icon={faHome} /> },
             { tittleItem: 'info@example.com', url: '/', icon: <FontAwesomeIcon icon={faEnvelope} /> },
-            { tittleItem: '+ 01 234 567 88', url: '/', icon: <FontAwesomeIcon icon={faPhone} /> },
+            { tittleItem: '1900.6777 (8:00-1:30)', url: '/', icon: <FontAwesomeIcon icon={faPhone} /> },
             { tittleItem: '+ 01 234 567 89', url: '/', icon: <FontAwesomeIcon icon={faPrint} /> },
         ],
     },
