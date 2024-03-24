@@ -8,6 +8,8 @@ import Comment from '@/components/productLayout/comment';
 
 import styles from './product.module.scss';
 import MultipleItems from '@/components/slider/slick-product-recommend/MultipleItems';
+import ProductInfo from './productInfo/ProductInfo';
+import ProductDetail from './productDetail/ProductDetail';
 
 const cx = classNames.bind(styles);
 
@@ -106,6 +108,17 @@ function ProductPage() {
                         <div className={cx('text-comment')}>
                             <h2 className={cx('h2')}>thảo luận</h2>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className={cx('wrapper', 'row')}>
+                <div className={cx('container')}>
+                    <div className={cx('col-md-5')}>
+                        <ProductInfo></ProductInfo>
+                    </div>
+                    <div className={cx('col-md-7')}>
+                        <ProductDetail></ProductDetail>
                     </div>
                 </div>
             </div>
