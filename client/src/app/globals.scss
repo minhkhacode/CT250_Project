@@ -62,10 +62,22 @@ a {
     }
 }
 
+img {
+    // display: inline-block;
+    // height: auto;
+    // max-width: 100%;
+    // vertical-align: middle;
+}
+
 .scrollbar_custom {
     height: auto;
 }
 
 .fillters {
     display: flex;
+}
+
+.row {
+    margin-left: auto;
+    margin-right: auto;
 }

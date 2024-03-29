@@ -1,0 +1,99 @@
+.wrapper-product {
+    padding: 0 30px 30px 30px;
+    width: 280px;
+    height: 100%;
+
+    :hover {
+        p {
+            color: #933;
+        }
+
+        .first-image {
+            opacity: 0;
+            transition: filter 0.6s, opacity 0.6s, transform 0.6s, box-shadow 0.3s;
+            transition-behavior: normal, normal, normal, normal;
+            transition-duration: 0.6s, 0.6s, 0.6s, 0.3s;
+            transition-timing-function: ease, ease, ease, ease;
+            transition-delay: 0s, 0s, 0s, 0s;
+            transition-property: filter, opacity, transform, box-shadow;
+            filter: brightness(100%);
+        }
+    }
+
+    img {
+        transition: filter 0.6s, opacity 0.6s, transform 0.6s, box-shadow 0.3s;
+        transition-behavior: normal, normal, normal, normal;
+        transition-duration: 0.6s, 0.6s, 0.6s, 0.3s;
+        transition-timing-function: ease, ease, ease, ease;
+        transition-delay: 0s, 0s, 0s, 0s;
+        transition-property: filter, opacity, transform, box-shadow;
+    }
+}
+
+.product-image {
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+
+    img {
+        margin: 0 auto;
+        max-width: 100%;
+        width: 100%;
+        vertical-align: middle;
+        max-width: 100%;
+        transition: all 1s;
+    }
+    .first-image {
+        img {
+            transition: filter 0.6s, opacity 0.6s, transform 0.6s, box-shadow 0.3s;
+            transition-behavior: normal, normal, normal, normal;
+            transition-duration: 0.6s, 0.6s, 0.6s, 0.3s;
+            transition-timing-function: ease, ease, ease, ease;
+            transition-delay: 0s, 0s, 0s, 0s;
+            transition-property: filter, opacity, transform, box-shadow;
+            position: absolute;
+            top: 0;
+            right: 0;
+            opacity: 1;
+        }
+    }
+}
+
+.second-image {
+    img {
+        transition: filter 0.6s, opacity 0.6s, transform 0.6s, box-shadow 0.3s;
+        transition-behavior: normal, normal, normal, normal;
+        transition-duration: 0.6s, 0.6s, 0.6s, 0.3s;
+        transition-timing-function: ease, ease, ease, ease;
+        transition-delay: 0s, 0s, 0s, 0s;
+        transition-property: filter, opacity, transform, box-shadow;
+    }
+}
+
+.box-text {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.product-name {
+    margin-left: auto;
+    margin-right: auto;
+    p {
+        margin-bottom: 30px !important;
+        margin-top: 0.1em;
+        color: #676767;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 4;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+}
+
+.product-price {
+    color: #606060;
+    font-size: 17px;
+    font-weight: 700;
+}

@@ -18,6 +18,8 @@ function MultipleItems() {
         slidesToShow: 6,
         slidesToScroll: 1,
         initialSlide: 0,
+        height: 'auto',
+        width: '100%',
         responsive: [
             {
                 breakpoint: 1024,

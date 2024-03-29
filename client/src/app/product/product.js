@@ -7,7 +7,7 @@ import CustomPaging from '@/components/slider/image-product';
 import Comment from '@/components/productLayout/comment';
 
 import styles from './product.module.scss';
-import MultipleItems from '@/components/slider/slick-product-recommend/MultipleItems';
+import Responsive from '@/components/slider/slick-product-recommend/MultipleItems';
 
 const cx = classNames.bind(styles);
 
@@ -162,7 +162,7 @@ function ProductPage() {
                     <h3 className={cx('product-section-title')}>sản phẩm tương tự</h3>
 
                     <div className="row">
-                        <MultipleItems />
+                        <Responsive />
                     </div>
                 </div>
             </div>

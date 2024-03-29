@@ -33,7 +33,6 @@ function CustomPaging() {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        auto: true,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
     };
