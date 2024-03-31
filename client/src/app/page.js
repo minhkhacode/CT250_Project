@@ -10,6 +10,8 @@ import { dataProductMail, dataProductFemale } from '@/data/bestSellingProducts';
 import HomepageLayout from '@/components/homepageLayout/homepageLayout';
 import NewWatches from '@/components/slider/newWatches/newWatches';
 import { dataNewWatches } from '@/data/newWatches';
+import Banner from '@/components/banner';
+import { BrandBestSeller, BranSwitzerland } from '@/data/BrandBestSeller';
 
 import styles from './page.module.scss';
 
@@ -27,7 +29,7 @@ function Home() {
         <div className={cx('wrapper')}>
             <div className={cx('hinh-anh-banner', 'hide-for-small')}>
                 <div className={cx('wp-block-image')}>
-                    <img src="https://lh3.googleusercontent.com/pw/ABLVV87G7vJUaP4J0ttU7EK12ZX8eaAf00opIlVMpeQwXAHCOd70gYNskcw_0dHN0SMUT8h0z3y_RO2ALPgIbopgsNDKoWgpNmYS0RgvUjXS4-geNFdZ7DYRHAGd8NqjFj4f_jIJLjrMCqvq9G-rAL7Ztln3=w1920-h500-s-no?authuser=0" />
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMvEV0SMhlmJ7i12_E58Mhe_ByCduhJpW6vKKhxd0XWGvplS6-J2Y3yomX-plGjJoWpnMG0noN7EK4dvKTLp8rS0v2wani04IC9R3yh3Xvm5Xs4TIxNngrOxxA1zTT13Id31pJM9e46AEmSDV6m4hZR=w2048-h596-s-no?authuser=0" />
                 </div>
             </div>
 
@@ -72,7 +74,7 @@ function Home() {
                 <hr />
             </div>
 
-            <div className={cx('container-fluid', 'main')}>
+            {/* <div className={cx('container-fluid', 'main')}>
                 <div className="filter row">
                     <div className="filter__item filter__item-left col">
                         <img
@@ -163,7 +165,8 @@ function Home() {
                         <h2 className="collection__item-title">ABC</h2>
                     </div>
                 </div>
-            </div>
+            </div> */}
+            <Banner />
 
             {/* Đồng hồ nam bán chạy */}
             <div className={cx('is-divider')}>
@@ -284,7 +287,7 @@ function Home() {
                         </h2>
                     </div>
 
-                    <HomepageLayout />
+                    <HomepageLayout data={BrandBestSeller} />
                 </div>
             </div>
             <div
@@ -303,7 +306,7 @@ function Home() {
                             THƯƠNG HIỆU ĐỒNG HỒ CAO CẤP THỤY SỸ
                         </h2>
                     </div>
-                    <HomepageLayout />
+                    <HomepageLayout data={BranSwitzerland} />
                 </div>
             </div>
 

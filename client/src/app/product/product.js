@@ -5,9 +5,10 @@ import { toast } from 'react-hot-toast';
 
 import CustomPaging from '@/components/slider/image-product';
 import Comment from '@/components/productLayout/comment';
+import Responsive from '@/components/slider/slick-product-recommend/MultipleItems';
+import { dataNewWatches } from '@/data/newWatches';
 
 import styles from './product.module.scss';
-import Responsive from '@/components/slider/slick-product-recommend/MultipleItems';
 
 const cx = classNames.bind(styles);
 
@@ -162,7 +163,7 @@ function ProductPage() {
                     <h3 className={cx('product-section-title')}>sản phẩm tương tự</h3>
 
                     <div className="row">
-                        <Responsive />
+                        <Responsive data={dataNewWatches} />
                     </div>
                 </div>
             </div>

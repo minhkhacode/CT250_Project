@@ -5,13 +5,14 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import Tippy from '@tippyjs/react';
-import 'tippy.js/animations/scale.css';
 import { useEffect, useState } from 'react';
+import Tippy from '@tippyjs/react';
+import HeadlessTippy from '@tippyjs/react/headless';
 
 import { dataHeader } from './dataHeader';
 import Menu from '../menu/menu.js';
 import dataMenu from './dataMenu.js';
+import { Wrapper as PopperWrapper } from '@/components/search/popperWrapper';
 
 import styles from './header.module.scss';
 
@@ -81,14 +82,29 @@ function Header() {
                                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                                     </button>
                                 </Tippy>
-                                <input
-                                    className={cx('search-input')}
-                                    placeholder="Search products or brands"
-                                    value={valueSearch}
-                                    onChange={(e) => {
-                                        setValueSearch(e.target.value);
-                                    }}
-                                />
+                                <HeadlessTippy
+                                    interactive
+                                    visible={true}
+                                    // render={(attrs) => (
+                                    //     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                                    //         <PopperWrapper>
+                                    //             <h4 className={cx('search-title')}>Accounts</h4>
+                                    //             {/* {searchResult.map((result) => {
+                                    //                 <AccountItem key={result.id} data={result} />;
+                                    //             })} */}
+                                    //         </PopperWrapper>
+                                    //     </div>
+                                    // )}
+                                >
+                                    <input
+                                        className={cx('search-input')}
+                                        placeholder="Search products or brands"
+                                        value={valueSearch}
+                                        onChange={(e) => {
+                                            setValueSearch(e.target.value);
+                                        }}
+                                    />
+                                </HeadlessTippy>
                             </form>
                             <Tippy content={'Giỏ hàng'} placement="bottom" delay={[300, 0]}>
                                 <div className={cx('icon-bag')} onClick={() => router.push('/cart')}>
@@ -127,7 +143,7 @@ function Header() {
                                             <div className={cx('dropdown')}>
                                                 <Link href={item.url}>{item.title}</Link>
                                                 <div className={cx('isShow')}>
-                                                    {<Menu data={dataMenu[index].data}/>}
+                                                    {<Menu data={dataMenu[index].data} />}
                                                     {item.title === show && <Menu data={dataMenu[index].data} />}
                                                 </div>
                                                 {/* <div className={cx('dropdown-content')}>

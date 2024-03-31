@@ -1,0 +1,66 @@
+.banner-grid-wrapper {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner-grid {
+    width: 1060px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+}
+
+.fill {
+    height: 100%;
+    left: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.banner-layers {
+    height: 100%;
+    max-height: 100%;
+    position: relative;
+}
+
+.bts {
+    margin-top: 30px;
+}
+
+.image-cover {
+    transition: 0.5s ease-in-out;
+    transition: opacity 0.6s, transform 0.6s, background-color 0.6s;
+
+    img {
+        background-position: 50% 50%;
+        background-size: cover;
+        height: auto;
+        overflow: hidden;
+        padding-top: 100%;
+        position: relative;
+    }
+}
+
+.col-inner {
+    transition: opacity 0.6s, transform 0.6s, background-color 0.6s;
+
+    img {
+        border-radius: 15px;
+        vertical-align: middle;
+        max-width: 100%;
+        transition: all 1s;
+    }
+
+    :hover {
+        img {
+            -moz-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+    }
+}

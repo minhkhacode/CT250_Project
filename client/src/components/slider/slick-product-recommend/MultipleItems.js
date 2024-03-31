@@ -6,7 +6,7 @@ import styles from './MultipleItems.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Responsive() {
+function Responsive({ data }) {
     var settings = {
         dots: true,
         infinite: true,
@@ -48,27 +48,18 @@ function Responsive() {
         <div className="slider-container">
             <div className={cx('wrapper')}>
                 <Slider {...settings}>
-                    <div className={cx('slider-wrapper')}>
-                        <ItemProduct />
-                    </div>
-                    <div className={cx('slider-wrapper')}>
-                        <ItemProduct />
-                    </div>
-                    <div className={cx('slider-wrapper')}>
-                        <ItemProduct />
-                    </div>
-                    <div className={cx('slider-wrapper')}>
-                        <ItemProduct />
-                    </div>
-                    <div className={cx('slider-wrapper')}>
-                        <ItemProduct />
-                    </div>
-                    <div className={cx('slider-wrapper')}>
-                        <ItemProduct />
-                    </div>
-                    <div className={cx('slider-wrapper')}>
-                        <ItemProduct />
-                    </div>
+                    {data.map((item, index) => {
+                        return (
+                            <div className={cx('slider-wrapper')}>
+                                <ItemProduct
+                                    img={item.img}
+                                    secondImg={item.img2}
+                                    nameProduct={item.name}
+                                    price={item.price}
+                                />
+                            </div>
+                        );
+                    })}
                 </Slider>
             </div>
         </div>

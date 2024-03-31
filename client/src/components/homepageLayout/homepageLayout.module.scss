@@ -91,3 +91,12 @@
     position: relative;
     width: 100%;
 }
+
+.image-color {
+    filter: grayscale(100%);
+    transition: filter 0.6s, opacity 0.6s, transform 0.6s, box-shadow 0.3s;
+}
+
+.image-color:hover {
+    filter: grayscale(0%);
+}

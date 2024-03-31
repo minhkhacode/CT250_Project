@@ -3,7 +3,6 @@ import React from 'react';
 import Slider from 'react-slick';
 
 import ItemProduct from '@/components/productLayout/itemProduct';
-import { dataNewWatches } from '@/data/newWatches';
 
 import styles from './newWatches.module.scss';
 
