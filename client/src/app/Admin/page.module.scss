@@ -1,0 +1,17 @@
+.Admin {
+    height: 100vh;
+
+    .aside {
+        background-color: rgb(78, 115, 223);
+    }
+
+    .dashboard {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .dashboard__main {
+            flex: 1;
+        }
+    }
+}
