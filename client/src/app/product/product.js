@@ -2,13 +2,16 @@
 import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { toast } from 'react-hot-toast';
-
 import CustomPaging from '@/components/slider/image-product';
 import Comment from '@/components/productLayout/comment';
-import Responsive from '@/components/slider/slick-product-recommend/MultipleItems';
+
 import { dataNewWatches } from '@/data/newWatches';
 
 import styles from './product.module.scss';
+import Responsive from '@/components/slider/slick-product-recommend/MultipleItems';
+import MultipleItems from '@/components/slider/slick-product-recommend/MultipleItems';
+// import ProductInfo from './productInfo/ProductInfo';
+// import ProductDetail from './productDetail/ProductDetail';
 
 const cx = classNames.bind(styles);
 
@@ -164,6 +167,63 @@ function ProductPage() {
 
                     <div className="row">
                         <Responsive data={dataNewWatches} />
+                    </div>
+                </div>
+            </div>
+
+            <div className={cx('review-form-wrapper')}>
+                <div className={cx('review-form')}>
+                    <form className={cx('comment-form')}>
+                        <div className={cx('comment-form-comment')}>
+                            <textarea
+                                className={cx('comment')}
+                                cols={'45'}
+                                rows={'8'}
+                                placeholder="Để lại cảm nghĩ của bạn nhé!"
+                            />
+                        </div>
+                        <div className={cx('action-comment-wrapper')}>
+                            <div className={cx('comment-form-name')}>
+                                <input placeholder="Tên*" />
+                            </div>
+                            <div className={cx('comment-form-email')}>
+                                <input placeholder="Email*" type="email" />
+                            </div>
+                            <div className={cx('comment-form-phone')}>
+                                <input placeholder="Số điện thoại" />
+                            </div>
+                            <div className={cx('comment-form-author')}>
+                                <div className={cx('btn--normal')}>
+                                    <button
+                                        onClick={() => {
+                                            handleSubmitComment();
+                                        }}
+                                    >
+                                        Đăng thảo luận
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div className="row">
+                    <div className={cx('comments')} style={{ marginTop: '20px' }}>
+                        <div className={cx('comment-count')}>
+                            <span>0 thảo luận</span>
+                        </div>
+                        <div className={cx('comment-list')}>
+                            <Comment />
+                            <Comment />
+                            <Comment />
+                            <Comment />
+                        </div>
+                    </div>
+                </div>
+                <div className={cx('relate-product')}>
+                    <h3 className={cx('product-section-title')}>sản phẩm tương tự</h3>
+
+                    <div className="row">
+                        <MultipleItems />
                     </div>
                 </div>
             </div>

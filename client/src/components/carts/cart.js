@@ -26,51 +26,30 @@ function Cart(props) {
                             className={cx('qty-count', 'qty-count--minus')}
                             data-action="minus"
                             type="button"
-                            onClick={() => {
-                                if (count === 1) {
-                                    setCount(1);
-                                } else {
-                                    setCount(count - 1);
-                                }
-                            }}
+                            onClick={props.handleDecreaseQuantity}
                         >
                             -
                         </button>
-                        <input
-                            className={cx('product-qty')}
-                            type="number"
-                            name="product-qty"
-                            min={1}
-                            max="10"
-                            value={count}
-                            onChange={(e) => {
-                                setCount(e.target.value);
-                            }}
-                            readOnly={false}
-                        />
+                        <div className={cx('product-qty')}>
+                            {props.quantity}
+                        </div>
                         <button
                             className={cx('qty-count', 'qty-count--add')}
                             data-action="add"
                             type="button"
-                            onClick={() => {
-                                if (count === 10) {
-                                    setCount(10);
-                                } else {
-                                    setCount(count + 1);
-                                }
-                            }}
+                            onClick={props.handleIncreaseQuantity}
                         >
                             +
                         </button>
                     </div>
                     <div className={cx('product-subtotal')}>
                         <span className={cx('cart-item-total')}>
-                            {props.price} <FontAwesomeIcon className={cx('iconPrice')} icon={faDongSign} />{' '}
+                            {Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(props.price * props.quantity)}
                         </span>
                     </div>
-                    <Tippy content={'Delete'} delay={[500, 500]}>
+                    <Tippy content={'Delete'}>
                         <div className={cx('product-item-delete')}>
-                            <button className={cx('btnDelete')} onClick={props.onClick}>
+                            <button className={cx('btnDelete')} onClick={props.handleRemoveCart}>
                                 <FontAwesomeIcon icon={faTrash} />
                             </button>
                         </div>

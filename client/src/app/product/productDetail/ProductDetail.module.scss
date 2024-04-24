@@ -1,3 +1,171 @@
 .detail {
-    border: 1px solid #333;
+    padding-left: 20px;
+    color: #676767;
+
+    .title {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        color: #949494;
+
+        .icon {
+            font-size: 2rem;
+        }
+
+        h5 {
+            font-size: 1.2rem;
+        }
+    }
+
+    .content {
+        position: relative;
+        padding: 0 16px 30px 16px;
+        line-height: 1.8rem;
+        width: 100%;
+        overflow: hidden;
+
+        &.showmore {
+            height: 400px;
+        }
+
+        .clip {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            height: 0;
+            padding-bottom: 56.23%;
+            overflow: hidden;
+            margin-bottom: 16px;
+
+            img {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                margin: auto;
+                border: none;
+                cursor: pointer;
+                transition: .5s all;
+                -webkit-transition: .5s all;
+                -moz-transition: .5s all;
+
+                &:hover {
+                    filter: brightness(.8);
+                }
+            }
+
+            .play__btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                right: auto;
+                width: 68px;
+                height: 48px;
+                margin-left: -34px;
+                margin-top: -24px;
+                background: url(https://donghohaitrieu.com/wp-content/plugins/perfmatters/img/youtube.svg) no-repeat;
+                background-position: center;
+                background-size: cover;
+                pointer-events: none;
+            }
+        }
+
+        .sub {
+            text-align: center;
+        }
+
+        #table {
+            border-radius: 16px;
+            padding: 15px;
+            border-collapse: unset !important;
+            width: 100%;
+            background-color: #f7f7f7;
+            line-height: 16px;
+            margin-bottom: 16px;
+        }
+
+        
+    }
+
+    .control{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: .85rem;
+        color: #777;
+        cursor: pointer;
+        line-height: 16px;
+        transition: all .2s;
+        padding-top: 16px;
+        margin-bottom: 16px;
+        width: 100%;
+        position: absolute;
+        bottom: -24px;
+        background: #fff;
+    
+        .icon {
+            font-size: 1.5rem;
+        }
+    
+        &:hover {
+            color: #b33333;
+        }
+
+        &.more::before {
+            height: 55px;
+            margin-top: -68px;
+            content: "";
+            background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff00',endColorstr='#ffffff',GradientType=0 );
+            display: block;
+            width: 100%;
+            position: absolute;
+            pointer-events: none;
+        }
+    } 
+
+    .rating {
+        width: 100%;
+        text-align: center;
+        border: 1px solid #949494;
+        padding: 8px 0;
+        border-radius: 8px;
+        border-left: 4px #b33333 solid;
+        margin-top: 20px;
+
+        .rating__title {
+            text-align: center;
+        }
+
+        .rate {
+            font-size: 1.25rem;
+
+            .rate__value {
+                margin-left: 16px;
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                cursor: pointer;
+
+                .icon {
+                    font-size: 2rem;
+
+                    &.good {
+                        color: #4e66a8;
+                    }
+
+                    &.bad {
+                        color: #dd6d85;
+                    }
+                }
+            }
+        }
+    }
 }
